@@ -1,0 +1,31 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: airflow
+
+images:
+  - name: ghcr.io/dnbnero/airflow
+    newName: ghcr.io/dnbnero/airflow
+    newTag: latest
+
+resources:
+  - ./configs/namespace.yaml
+  - ./configs/apiserver.yaml
+  - ./configs/dag-processor.yaml
+  - ./configs/scheduler.yaml
+  - ./configs/triggerer.yaml
+  - ./configs/worker.yaml
+  - ./configs/valkey.yaml
+
+configMapGenerator:
+  - name: airflow-cfg
+    files:
+      - ./configs/airflow.cfg
+secretGenerator:
+- name: airflow-secrets
+  envs:
+    - ./configs/.env
+      
+labels:
+  - pairs:
+      managed-by-kustomize: "true"
