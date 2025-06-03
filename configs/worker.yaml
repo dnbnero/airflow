@@ -22,6 +22,9 @@ spec:
           - airflow
           - celery
           - worker
+        resources:
+          limits:
+            memory: 4096Mi
         env:
           - name: DUMB_INIT_SETSID
             value: "0"
