@@ -6,7 +6,7 @@ namespace: airflow
 images:
   - name: ghcr.io/dnbnero/airflow
     newName: ghcr.io/dnbnero/airflow
-    newTag: latest
+    newTag: main
 
 resources:
   - ./configs/namespace.yaml
