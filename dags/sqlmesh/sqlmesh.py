@@ -50,7 +50,7 @@ def send_err_log(context):
     Dag name: {dag_id}
     Run id: {run_id}
     Task id: {task_id}
-    Error: <blockquote>{msg}</blockquote>f
+    Error: <blockquote>{msg}</blockquote>
     """
 
     data = httpx.get(
