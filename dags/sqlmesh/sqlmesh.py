@@ -77,7 +77,7 @@ def run_sqlmesh_models():
         )
 
         conn_run = BaseHook.get_connection("sqlmesh_data")
-        conn_state = BaseHook.get_connection("sqlmesh_data_state")
+        conn_state = BaseHook.get_connection("sqlmesh_state")
 
         ch_connection = ClickhouseConnectionConfig(
             concurrent_tasks=8,
