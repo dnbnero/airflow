@@ -41,7 +41,6 @@ def send_err_log(context):
     for line in data:
         if line.get('error_detail'):
             for i in line.get('error_detail'):
-                print('\n\n\n\n\n', i, '\n\n\n\n')
                 msg += i.get('exc_type') + '\n\t' + i.get('exc_value')
                 msg += '\n'
 
