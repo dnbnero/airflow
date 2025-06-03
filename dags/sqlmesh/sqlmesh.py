@@ -61,7 +61,7 @@ def send_err_log(context):
         }
     )
 
-    print(data.content)
+    print(data)
 
 @dag(schedule='*/30 * * * *', max_active_runs=1)
 def run_sqlmesh_models():
