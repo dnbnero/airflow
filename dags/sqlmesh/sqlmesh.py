@@ -69,12 +69,18 @@ def run_sqlmesh_models():
     @task(on_failure_callback=send_err_log)
     def run():
         from airflow.hooks.base import BaseHook
+        
         from sqlmesh.core.context import Context
         from sqlmesh.core.config import Config, GatewayConfig
         from sqlmesh.core.config.connection import (
             PostgresConnectionConfig,
             ClickhouseConnectionConfig,
         )
+
+        import sys
+        from pprint import pprint
+
+        pprint(sys.path)
 
         conn_run = BaseHook.get_connection("sqlmesh_data")
         conn_state = BaseHook.get_connection("sqlmesh_state")
