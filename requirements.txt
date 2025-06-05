@@ -9,3 +9,4 @@ httpx
 psycopg2-binary
 psycopg[binary]
 clickhouse_connect
+lxml
